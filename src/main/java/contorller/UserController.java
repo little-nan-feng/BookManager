@@ -3,6 +3,8 @@ package contorller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import pojo.User;
+import service.UserService;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -14,7 +16,7 @@ public class UserController {
     private UserService userService;
 
     @RequestMapping("/loginCheck")
-    public String loginChenk(User user, HttpServletRequest request){
+    public String loginCheck(User user, HttpServletRequest request){
 
         User user1=userService.queryUser(user);
 
