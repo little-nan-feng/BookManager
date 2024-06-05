@@ -11,6 +11,18 @@
     <title>Title</title>
 </head>
 <body>
-
+<script type="text/javascript">
+    function manage(){
+        var mark=$("#mark").val();
+        if(mark=="借阅"){
+            var url="${pageContext.request.contextPath}/book/borrow";
+            $.post(url,$("#manageBook").serialize(),function (status){
+                if(status==true){
+                    window.location.href="${pageContext.request.contextPath}/book/query";
+                }
+            })
+        }
+    }
+</script>
 </body>
 </html>
