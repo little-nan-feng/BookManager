@@ -10,7 +10,22 @@
 <head>
     <title>Title</title>
 </head>
-<body>
+<tbody>
 
-</body>
+<script type="text/javascript">
+    //定义js方法
+    function manage(){
+        var mark = $("#mark").val();
+        if (mark == "借阅"){
+            var url = "${pageContext.request.contextPath}/book/borrow";
+            $.post(url,$("#manageBook").serialize(),function (status){
+                if(status == true){
+                    window.location.herf = "${pageContext.request.contextPath}/book/query";
+                }
+            })
+        }
+    }
+</script>
+
+</tbody>
 </html>
